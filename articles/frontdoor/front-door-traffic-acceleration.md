@@ -36,6 +36,9 @@ The outer ring is the preferred target for all traffic, and the inner ring is de
 
 Front Door's architecture ensures that requests from your end users always reach the closest Front Door edge locations. If the preferred Front Door edge location is unhealthy, all traffic automatically moves to the next closest edge location.
 
+> [!WARNING]
+> AFD Unicast routing determines the appropriate PoP during DNS resolution. When the end user's location is not available from the request metadata, routing is based on the location of the DNS resolver, which means the request may not be routed to the PoP closest to the user.
+
 ::: zone-end
 
 ::: zone pivot="front-door-standard-premium"
